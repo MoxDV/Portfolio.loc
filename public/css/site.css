@@ -1,0 +1,98 @@
+/* Обеспечивает для HTML-элементов лучшую кроссбраузерность в стилях по умолчанию */
+@import url("normalize.css");
+
+/* Добавляет шрифты */
+@import url('https://fonts.googleapis.com/css?family=Alice|Lobster|Roboto');
+
+body {
+    font-family: 'Alice', serif;
+    display: flex;
+    flex-direction: column;
+    background: #0f0f0f;
+}
+
+header {
+    display: flex;
+    order: 1;
+    height: 100vh;
+    background-color: #b2b2b2;
+    background: #021F47 url("../images/background-header.jpg") no-repeat top center;
+    background-size: cover;
+    flex-direction: column;
+}
+
+.mobile-btn {
+    margin: 10px 10px 10px auto;
+    display: flex;
+    width: 40px;
+    height: 40px;
+    background: lightgray;
+    justify-content: center;
+    align-items: center;
+
+}
+.icon-menu {
+    width: 30px;
+    height: 30px;
+    fill: black;
+}
+
+.banner {
+    flex: 1 1 100%;
+    margin: 0 10px 10px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #ebebeb;
+}
+.full-name{
+    font-weight: bold;
+    font-size: 2em;
+    font-family: 'Roboto', sans-serif;
+}
+.banner-text {
+    color: gray;
+    text-align: center;
+    font-size: 1em;
+    line-height: 1.5em;
+}
+.banner-text span, .banner-text a {
+    color: #ebebeb;
+}
+.banner-text a {
+    text-decoration: none;
+}
+.banner hr {
+    width: 60%;
+    margin: 10px auto;
+    border-color: #2F2D2E;
+}
+
+nav {
+    display: flex;
+    background: #00173D;
+    flex-direction: column;
+    position: fixed;
+    top: 55px;
+    right: 10px;
+    padding: 5px;
+    line-height: 2em;
+    width: 70vw;
+
+}
+nav a {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2em;
+    text-decoration: none;
+    color: #ebebeb;
+    border-bottom: 1px dotted #2F2D2E;
+}
+.none {
+    display: none;
+}
+
+
+#about {
+    order: 2;
+}
