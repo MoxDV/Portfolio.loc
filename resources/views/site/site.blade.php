@@ -23,10 +23,10 @@
         <link rel="shortcut icon" href="{{ asset('images/favicon.png') }}" >
     </head>
     <body>
-        <section id="about">
+        <section id="about" class="section">
             <h1>About</h1>
         </section>
-        <header id="header">
+        <header id="header" class="section">
             @include('site.header')
         </header>
     </body>

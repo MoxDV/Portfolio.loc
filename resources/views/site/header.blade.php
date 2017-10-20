@@ -18,12 +18,12 @@
 ​‌</a>
 
 <nav class="" id="menu">
-    <a class="item-nav" href="#header">Домашняя</a>
-    <a class="item-nav" href="#about">Обо мне</a>
-    <a class="item-nav" href="#resume">Resume</a>
-    <a class="item-nav" href="#portfolio">Works</a>
-    <a class="item-nav" href="#testimonials">Testimonials</a>
-    <a class="item-nav" href="#contact">Contact</a>
+    <a class="item-nav link" href="#header">Домашняя</a>
+    <a class="item-nav link" href="#about">Обо мне</a>
+    <a class="item-nav link" href="#resume">Resume</a>
+    <a class="item-nav link" href="#portfolio">Works</a>
+    <a class="item-nav link" href="#testimonials">Testimonials</a>
+    <a class="item-nav link" href="#contact">Contact</a>
 </nav>
 
 <div class="banner">
@@ -32,8 +32,8 @@
         I'm a Manila based <span>graphic designer</span>, <span>illustrator</span>
         and <span>webdesigner</span> creating awesome and effective visual
         identities for companies of all sizes around the globe. Let's
-        <a class="banner-link" href="#about">start scrolling</a>
-        and learn more <a class="banner-link" href="#about">about me</a>.
+        <a class="banner-link link" href="#about">start scrolling</a>
+        and learn more <a class="banner-link link" href="#about">about me</a>.
     </p>
     <hr />
 </div>

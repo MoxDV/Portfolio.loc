@@ -123,4 +123,5 @@ a.active {
 
 #about {
     order: 2;
+    height: 100vh;
 }

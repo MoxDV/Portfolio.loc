@@ -1,5 +1,5 @@
 $(function () {
-    /* Открывает закрывает меню */
+    /* Открывает/закрывает меню */
     $('#menu-btn').click(function () {
         $('#menu').toggleClass('none');
     });
@@ -17,46 +17,34 @@ $(function () {
     windowSize();
     $(window).resize(windowSize);
 
-    $('#menu').on('click', 'a', function (event) {
-        event.preventDefault();
-        var id  = $(this).attr('href'),
-            top = $(id).offset().top;
-        $('body,html').animate({scrollTop: top}, 1000);
-        windowSize();
-    });
 
-    // Отмечает активный раздел меню
-    var menu_selector = "#menu";
-    function onScroll(){
-        var scroll_top = $(document).scrollTop();
-        $(menu_selector + " a").each(function(){
-            var hash = $(this).attr("href");
-            var target = $(hash);
-            if (target.position().top <= scroll_top && target.position().top + target.outerHeight() > scroll_top) {
-                $(menu_selector + " a.active").removeClass("active");
-                $(this).addClass("active");
-            } else {
-                $(this).removeClass("active");
+    // Меняем активный пункт в списке сайдбара при скролле
+    function onActiveMenu() {
+        var $sections = $('.section');
+        $sections.each(function(i,el){
+            var top  = $(el).offset().top-100;
+            var bottom = top +$(el).height();
+            var scroll = $(window).scrollTop();
+            var id = $(el).attr('id');
+            if( scroll > top && scroll < bottom){
+                $('a.active').removeClass('active');
+                $('a[href="#'+id+'"]').addClass('active');
+
             }
-        });
+        })
     }
-    onScroll();
-    $(document).on("scroll", onScroll);
-    $("a[href^=#]").click(function(e){
-        e.preventDefault();
+    onActiveMenu();
+    jQuery(window).scroll(function(){ onActiveMenu(); });
 
-        $(document).off("scroll");
-        $(menu_selector + " a.active").removeClass("active");
-        $(this).addClass("active");
-        var hash = $(this).attr("href");
-        var target = $(hash);
+    // Плавный переход по странице
+    $('.link').click(function (event) {
+        // исключаем стандартную реакцию браузера
+        event.preventDefault();
+        // получем идентификатор блока из атрибута href
+        var id  = $(this).attr('href'),
+            // находим высоту, на которой расположен блок
+            top = $(id).offset().top;
 
-        $("html, body").animate({
-            scrollTop: target.offset().top
-        }, 500, function(){
-            window.location.hash = hash;
-            $(document).on("scroll", onScroll);
-        });
-
-    });
+        $('body,html').animate({scrollTop: top}, 1000);
+    })
 });
