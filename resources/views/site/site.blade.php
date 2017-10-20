@@ -16,6 +16,8 @@
         <link rel="stylesheet" href="{{ asset('css/site.css') }}">
 
         <!-- === Script === -->
+        <script src="{{ asset('js/jquery-3.2.1.min.js') }}"></script>
+        <script src="{{ asset('js/site.js') }}"></script>
 
         <!-- === Favicons === -->
         <link rel="shortcut icon" href="{{ asset('images/favicon.png') }}" >

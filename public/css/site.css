@@ -19,6 +19,7 @@ header {
     background: #021F47 url("../images/background-header.jpg") no-repeat top center;
     background-size: cover;
     flex-direction: column;
+    align-items: center;
 }
 
 .mobile-btn {
@@ -26,10 +27,12 @@ header {
     display: flex;
     width: 40px;
     height: 40px;
-    background: lightgray;
+    background: #A86308;
     justify-content: center;
     align-items: center;
-
+    position: fixed;
+    right: 0px;
+    border-radius: 50%;
 }
 .icon-menu {
     width: 30px;
@@ -37,9 +40,53 @@ header {
     fill: black;
 }
 
+nav {
+    display: flex;
+    background: #171B24;
+    flex-direction: column;
+    position: fixed;
+    top: 55px;
+    right: 10px;
+    padding: 5px;
+    line-height: 2em;
+    width: 200px;
+
+}
+@media (min-width: 510px) {
+    nav {
+        top: 0px;
+        right: 0px;
+        position: fixed;
+        flex-direction: row;
+        width: 100vw;
+        background: #2f2f2f;
+        justify-content: center;
+        align-items: center;
+    }
+    .mobile-btn{
+        display: none;
+    }
+}
+nav a {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2em;
+    text-decoration: none;
+    color: #ebebeb;
+    border-bottom: 1px dotted #2F2D2E;
+}
+@media (min-width: 510px){
+    nav a {
+        margin: 0 5px;
+    }
+}
+
+.none {
+    display: none;
+}
+
 .banner {
     flex: 1 1 100%;
-    margin: 0 10px 10px 10px;
+    margin: 0 10px 0px 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -48,14 +95,14 @@ header {
 }
 .full-name{
     font-weight: bold;
-    font-size: 2em;
+    font-size: 8vw;
     font-family: 'Roboto', sans-serif;
 }
 .banner-text {
     color: gray;
     text-align: center;
-    font-size: 1em;
-    line-height: 1.5em;
+    font-size: 4vw;
+    /*line-height: 1.5em;*/
 }
 .banner-text span, .banner-text a {
     color: #ebebeb;
@@ -65,33 +112,9 @@ header {
 }
 .banner hr {
     width: 60%;
-    margin: 10px auto;
+    margin: 0px auto;
     border-color: #2F2D2E;
 }
-
-nav {
-    display: flex;
-    background: #00173D;
-    flex-direction: column;
-    position: fixed;
-    top: 55px;
-    right: 10px;
-    padding: 5px;
-    line-height: 2em;
-    width: 70vw;
-
-}
-nav a {
-    font-family: 'Roboto', sans-serif;
-    font-size: 1.2em;
-    text-decoration: none;
-    color: #ebebeb;
-    border-bottom: 1px dotted #2F2D2E;
-}
-.none {
-    display: none;
-}
-
 
 #about {
     order: 2;

@@ -11,13 +11,13 @@
     </defs>
 </svg>
 
-<a class="mobile-btn" href="#" title="Меню">
+<a class="mobile-btn" href="#" title="Меню" id="menu-btn">
     <svg class="icon-menu">
         <use xlink:href="#icon-menu"></use>
     </svg>
 ​‌</a>
 
-<nav>
+<nav class="" id="menu">
     <a class="item-nav" href="#home">Home</a>
     <a class="item-nav" href="#about">About</a>
     <a class="item-nav" href="#resume">Resume</a>
