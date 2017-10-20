@@ -26,7 +26,7 @@
         <section id="about">
             <h1>About</h1>
         </section>
-        <header>
+        <header id="header">
             @include('site.header')
         </header>
     </body>

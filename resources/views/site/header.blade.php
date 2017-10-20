@@ -18,7 +18,7 @@
 ​‌</a>
 
 <nav class="" id="menu">
-    <a class="item-nav" href="#home">Home</a>
+    <a class="item-nav" href="#header">Home</a>
     <a class="item-nav" href="#about">About</a>
     <a class="item-nav" href="#resume">Resume</a>
     <a class="item-nav" href="#portfolio">Works</a>

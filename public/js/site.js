@@ -5,7 +5,6 @@ $(function () {
     });
 
     // Показывает меню если ширина больше 510px
-    windowSize();
     function windowSize(){
         //$('.full-name').text($(window).width());
         if ($(window).width() >= '493'){
@@ -15,5 +14,14 @@ $(function () {
 
         }
     };
-    $(window).resize(windowSize); // при изменении размеров
+    windowSize();
+    $(window).resize(windowSize);
+
+    $('#menu').on('click', 'a', function (event) {
+        event.preventDefault();
+        var id  = $(this).attr('href'),
+            top = $(id).offset().top;
+        $('body,html').animate({scrollTop: top}, 1000);
+        windowSize();
+    });
 });
