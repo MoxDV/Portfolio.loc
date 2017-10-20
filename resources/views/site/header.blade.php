@@ -18,8 +18,8 @@
 ​‌</a>
 
 <nav class="" id="menu">
-    <a class="item-nav" href="#header">Home</a>
-    <a class="item-nav" href="#about">About</a>
+    <a class="item-nav" href="#header">Домашняя</a>
+    <a class="item-nav" href="#about">Обо мне</a>
     <a class="item-nav" href="#resume">Resume</a>
     <a class="item-nav" href="#portfolio">Works</a>
     <a class="item-nav" href="#testimonials">Testimonials</a>
