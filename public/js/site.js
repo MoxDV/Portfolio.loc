@@ -27,8 +27,8 @@ $(function () {
             var scroll = $(window).scrollTop();
             var id = $(el).attr('id');
             if( scroll > top && scroll < bottom){
-                $('a.active').removeClass('active');
-                $('a[href="#'+id+'"]').addClass('active');
+                $('nav a.active').removeClass('active');
+                $('nav a[href="#'+id+'"]').addClass('active');
 
             }
         })

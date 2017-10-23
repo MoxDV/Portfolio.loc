@@ -13,6 +13,7 @@
               content="width=device-width, initial-scale=1, maximum-scale=1">
 
         <!-- === CSS === -->
+        <link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}">
         <link rel="stylesheet" href="{{ asset('css/site.css') }}">
 
         <!-- === Script === -->

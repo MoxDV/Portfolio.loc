@@ -36,4 +36,10 @@
         and learn more <a class="banner-link link" href="#about">about me</a>.
     </p>
     <hr />
+    <div class="social">
+        <a href="#"><i class="fa fa-facebook"></i></a>
+        <a href="#"><i class="fa fa-vk"></i></a>
+        <a href="#"><i class="fa fa-odnoklassniki"></i></a>
+        <a href="#"><i class="fa fa-skype"></i></a>
+    </div>
 </div>
