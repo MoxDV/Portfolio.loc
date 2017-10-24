@@ -310,21 +310,38 @@ a.active {
                                 RESUME
    ---------------------------------------------------------------------------*/
 #resume {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-ordinal-group: 4;
+    -ms-flex-order: 3;
     order: 3;
     background: #ebebeb;
     color: #3b3b3b;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
     line-height: 1.5em;
 }
 #resume .subsection{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
     margin: 0 0 30px 0;
 }
 @media (min-width: 600px) {
     #resume .subsection{
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: row;
         flex-direction: row;
     }
 }
@@ -334,6 +351,8 @@ a.active {
 }
 @media (min-width: 600px) {
     #resume .subsection .header{
+        -webkit-box-flex: 1;
+        -ms-flex: 1 1 33.33%;
         flex: 1 1 33.33%;
         padding: 30px 0 0 0;
     }
@@ -349,6 +368,8 @@ a.active {
 }
 @media (min-width: 600px) {
     #resume .subsection .content{
+        -webkit-box-flex: 2;
+        -ms-flex: 2 2 66.67%;
         flex: 2 2 66.67%;
     }
 }
