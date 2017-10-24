@@ -25,7 +25,7 @@
     </head>
     <body>
         <section id="about" class="section">
-            <h1>About</h1>
+            @include('site.about')
         </section>
         <header id="header" class="section">
             @include('site.header')

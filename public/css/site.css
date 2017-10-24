@@ -6,29 +6,56 @@
 
 body {
     font-family: 'Alice', serif;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
     background: #0f0f0f;
 }
 
+.none {
+    display: none;
+}
+
+/* ---------------------------------------------------------------------------
+                                HEADER
+   ---------------------------------------------------------------------------*/
 header {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-ordinal-group: 2;
+    -ms-flex-order: 1;
     order: 1;
     height: 100vh;
     background-color: #b2b2b2;
     background: #021F47 url("../images/background-header.jpg") no-repeat top center;
     background-size: cover;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
 }
 
 .mobile-btn {
     margin: 10px 10px 10px auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     width: 40px;
     height: 40px;
     background: #A86308;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     position: fixed;
     right: 0px;
@@ -41,8 +68,13 @@ header {
 }
 
 nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     background: #171B24;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
     position: fixed;
     top: 55px;
@@ -57,10 +89,17 @@ nav {
         top: 0px;
         right: 0px;
         position: fixed;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: row;
         flex-direction: row;
         width: 100vw;
         background: #2f2f2f;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
         justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
         align-items: center;
     }
     .mobile-btn{
@@ -85,16 +124,23 @@ a.active {
     font-weight: bold;
 }
 
-.none {
-    display: none;
-}
-
 .banner {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 100%;
     flex: 1 1 100%;
     margin: 0 10px 0px 10px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     color: #ebebeb;
 }
@@ -107,7 +153,6 @@ a.active {
     color: gray;
     text-align: center;
     font-size: 4vw;
-    /*line-height: 1.5em;*/
 }
 .banner-text span, .banner-text a {
     color: #ebebeb;
@@ -121,9 +166,14 @@ a.active {
     border-color: #2F2D2E;
 }
 .social {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
     width: 90%;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
     margin: 10px 0 0 0;
 }
@@ -134,7 +184,122 @@ a.active {
     font-size: 5vw;
 }
 
+/* ---------------------------------------------------------------------------
+                                ABOUT
+   ---------------------------------------------------------------------------*/
 #about {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-ordinal-group: 3;
+    -ms-flex-order: 2;
     order: 2;
-    height: 100vh;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    background: #3b3b3b;
+    /*justify-content: center;
+    align-content: center;*/
+    text-align: center;
+    padding: 10px;
 }
+@media (min-width: 510px){
+    #about {
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+        flex-direction: row;
+    }
+}
+
+#about .about-img {
+    border-radius: 50%;
+    width: 120px;
+    height: auto;
+}
+@media (min-width: 510px){
+    #about .photo{
+        -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+        flex-grow: 1;
+        -ms-flex-negative: 1;
+        flex-shrink: 1;
+        -ms-flex-preferred-size: 25%;
+        flex-basis: 25%;
+        margin: 30px 10px;
+    }
+}
+
+#about .info{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    color: #ebebeb;
+}
+@media (min-width: 510px){
+    #about .info{
+        -webkit-box-flex: 4;
+        -ms-flex-positive: 4;
+        flex-grow: 4;
+        -ms-flex-negative: 4;
+        flex-shrink: 4;
+        -ms-flex-preferred-size: 75%;
+        flex-basis: 75%;
+    }
+}
+
+#about h1{
+    font-family: 'Roboto', sans-serif;
+    font-size: 32px;
+}
+#about p{
+    text-align: left;
+    line-height: 1.5em;
+}
+#about .download {
+    margin: 30px 0 30px 0;
+}
+#about .download a{
+    background: #5b5b5b;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 0px;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    display: inline-block;
+    width: 100%;
+}
+#about .download a:hover{
+    background: #ebebeb;
+    color: #3b3b3b;
+}
+@media (min-width: 600px) {
+    #about .info{
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+        flex-flow: row wrap;
+        -webkit-box-align: start;
+        -ms-flex-align: start;
+        align-items: flex-start;
+        -webkit-box-pack: start;
+        -ms-flex-pack: start;
+        justify-content: flex-start;
+    }
+    .info .about {
+        width: 100%;
+    }
+    .download{
+        padding: 0 0 0 30px;
+    }
+    #about .download a{
+        padding: 10px;
+    }
+}
+
