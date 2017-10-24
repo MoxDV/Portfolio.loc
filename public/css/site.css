@@ -20,6 +20,10 @@ body {
     display: none;
 }
 
+.section {
+    padding: 30px 10px;
+}
+
 /* ---------------------------------------------------------------------------
                                 HEADER
    ---------------------------------------------------------------------------*/
@@ -202,7 +206,6 @@ a.active {
     /*justify-content: center;
     align-content: center;*/
     text-align: center;
-    padding: 10px;
 }
 @media (min-width: 510px){
     #about {
@@ -303,3 +306,90 @@ a.active {
     }
 }
 
+/* ---------------------------------------------------------------------------
+                                RESUME
+   ---------------------------------------------------------------------------*/
+#resume {
+    display: flex;
+    order: 3;
+    background: #ebebeb;
+    color: #3b3b3b;
+    flex-direction: column;
+    line-height: 1.5em;
+}
+#resume .subsection{
+    display: flex;
+    flex-direction: column;
+    margin: 0 0 30px 0;
+}
+@media (min-width: 600px) {
+    #resume .subsection{
+        display: flex;
+        flex-direction: row;
+    }
+}
+#resume .subsection .header{
+    text-align: center;
+    margin: 10px;
+}
+@media (min-width: 600px) {
+    #resume .subsection .header{
+        flex: 1 1 33.33%;
+        padding: 30px 0 0 0;
+    }
+}
+#resume .subsection .header h1{
+    display: inline;
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    border-bottom: 2px solid #2a88bd;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+@media (min-width: 600px) {
+    #resume .subsection .content{
+        flex: 2 2 66.67%;
+    }
+}
+#resume .content h1{
+    padding: 30px 0 0 0;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-size: 22px;
+    font-weight: bold;
+}
+#resume .content .position {
+    font-size: 18px;
+    font-style: italic;
+    text-align: center;
+}
+#resume .position .date {
+    font-style: normal;
+}
+
+#resume hr {
+    width: 90%;
+    margin: 10px auto;
+    border-color: #ebebeb;
+}
+
+#resume .skill {
+    width: 100%;
+    background: #bbbbbb;
+    height: 30px;
+    margin: 40px 0 0 0;
+}
+#resume .progress {
+    background: #3b3b3b;
+    height: 100%;
+}
+#resume .skill .info {
+    position: relative;
+    top: -60px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
+}

@@ -30,5 +30,8 @@
         <header id="header" class="section">
             @include('site.header')
         </header>
+        <section id="resume" class="section">
+            @include('site.resume')
+        </section>
     </body>
 </html>
