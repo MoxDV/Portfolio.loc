@@ -21,8 +21,7 @@
     <a class="item-nav link" href="#header">Домашняя</a>
     <a class="item-nav link" href="#about">Обо мне</a>
     <a class="item-nav link" href="#resume">Резюме</a>
-    <a class="item-nav link" href="#portfolio">Works</a>
-    <a class="item-nav link" href="#testimonials">Testimonials</a>
+    <a class="item-nav link" href="#works">Работы</a>
     <a class="item-nav link" href="#contact">Contact</a>
 </nav>
 

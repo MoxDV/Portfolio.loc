@@ -13,7 +13,8 @@ body {
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column;
-    background: #0f0f0f;
+    background: #ebebeb;
+    color: #3b3b3b;
 }
 
 .none {
@@ -22,6 +23,11 @@ body {
 
 .section {
     padding: 30px 10px;
+}
+
+.invert {
+    background: #3b3b3b;
+    color: #ebebeb;
 }
 
 /* ---------------------------------------------------------------------------
@@ -63,6 +69,7 @@ header {
     align-items: center;
     position: fixed;
     right: 0px;
+    top: 0px;
     border-radius: 50%;
 }
 .icon-menu {
@@ -202,7 +209,6 @@ a.active {
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column;
-    background: #3b3b3b;
     /*justify-content: center;
     align-content: center;*/
     text-align: center;
@@ -242,7 +248,6 @@ a.active {
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column;
-    color: #ebebeb;
 }
 @media (min-width: 510px){
     #about .info{
@@ -316,8 +321,6 @@ a.active {
     -webkit-box-ordinal-group: 4;
     -ms-flex-order: 3;
     order: 3;
-    background: #ebebeb;
-    color: #3b3b3b;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
@@ -413,4 +416,148 @@ a.active {
     text-transform: uppercase;
     letter-spacing: 1px;
     font-weight: bold;
+}
+
+/* ---------------------------------------------------------------------------
+                                RESUME
+---------------------------------------------------------------------------*/
+#works {
+    order: 4;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    /*padding: 5px;*/
+}
+#works h1{
+    width: 100%;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+
+#works .work{
+    flex-basis: 99%;
+    flex-basis: calc(100% - 10px);
+    margin: 5px;
+    min-width: 215px;
+    display: inline-block;
+    position: relative;
+}
+@media (min-width: 490px) {
+    #works .work{
+        flex-basis: 47%;
+        flex-basis: calc(50% - 10px);
+    }
+}
+@media (min-width: 715px) {
+    #works .work{
+        flex-basis: 31%;
+        flex-basis: calc(33.3333% - 10px);
+    }
+}
+@media (min-width: 940px) {
+    #works .work{
+        flex-basis: 23%;
+        flex-basis: calc(25% - 10px);
+        max-width: 300px;
+    }
+}
+
+#works img {
+    width: 100%;
+    height: auto;
+}
+#works .item {
+    width: 100%;
+    height: 100%;
+    background: gray;
+    background: rgba(0,0,0, .6);
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #ebebeb;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+#works .item:hover{
+    opacity: 1;
+}
+#works .item .info {
+    padding: 20px;
+    font-family: 'Lobster', cursive;
+}
+#works .info h5{
+    padding: 0;
+    margin: 0;
+    font-size: 24px;
+    font-weight: bold;
+}
+#works .info p{
+    padding: 0;
+    margin: 0;
+    font-size: 18px;
+    padding: 5px 0 0 0;
+}
+#works .view {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+}
+
+#works .modal-work {
+    /*display: block;*/
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.5);
+}
+#works .modal-work .content-work{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 500px;
+    background: #ebebeb;
+    color: #3b3b3b;
+    display: flex;
+    flex-direction: column;
+}
+#works .modal-work .content-work img{
+    width: 100%;
+    height: auto;
+}
+#works .modal-work .info {
+    padding: 10px 20px;
+    /*font-family: 'Lobster', cursive;*/
+}
+#works .modal-work .info h5{
+    letter-spacing: 1px;
+    font-size: 18px;
+}
+
+#works .modal-work .info p{
+    font-size: 16px;
+}
+#works .modal-work .header {
+    padding: 10px 20px;
+    font-size: 24px;
+    display: flex;
+}
+#works .modal-work .header a{
+    color: #ebebeb;
+    text-decoration: none;
+}
+#works .modal-work .last-item{
+    margin-left: auto;
 }

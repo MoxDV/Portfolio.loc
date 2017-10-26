@@ -1,6 +1,9 @@
 $(function () {
+    var id;
+
     /* Открывает/закрывает меню */
-    $('#menu-btn').click(function () {
+    $('#menu-btn').click(function (event) {
+        event.preventDefault();
         $('#menu').toggleClass('none');
     });
 
@@ -46,5 +49,25 @@ $(function () {
             top = $(id).offset().top;
 
         $('body,html').animate({scrollTop: top}, 1000);
+        windowSize();
     })
+
+    // Открытие модального окна
+    $('#works .work a').click(function (event) {
+        event.preventDefault();
+        id = $(this).attr('href');
+        $(id).removeClass('none');
+    });
+
+    // Закрытие модального окна
+    $(window).click(function(e) {
+        //alert(e.target.id);
+        if('#' + e.target.id == id){
+            $(id).addClass('none');
+        };
+    });
+    $('#works a.last-item').click(function (event) {
+        event.preventDefault();
+        $(id).addClass('none');
+    });
 });

@@ -24,7 +24,7 @@
         <link rel="shortcut icon" href="{{ asset('images/favicon.png') }}" >
     </head>
     <body>
-        <section id="about" class="section">
+        <section id="about" class="section invert">
             @include('site.about')
         </section>
         <header id="header" class="section">
@@ -32,6 +32,9 @@
         </header>
         <section id="resume" class="section">
             @include('site.resume')
+        </section>
+        <section id="works" class="section invert">
+            @include('site.works')
         </section>
     </body>
 </html>
