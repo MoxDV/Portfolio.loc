@@ -365,7 +365,7 @@ a.active {
     font-family: 'Roboto', sans-serif;
     font-size: 24px;
     font-weight: bold;
-    border-bottom: 2px solid #2a88bd;
+    border-bottom: 2px solid #A86308;
     text-transform: uppercase;
     letter-spacing: 2px;
 }
@@ -422,9 +422,17 @@ a.active {
                                 RESUME
 ---------------------------------------------------------------------------*/
 #works {
+    -webkit-box-ordinal-group: 5;
+    -ms-flex-order: 4;
     order: 4;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-flow: row wrap;
     flex-flow: row wrap;
+    -ms-flex-pack: distribute;
     justify-content: space-around;
     /*padding: 5px;*/
 }
@@ -439,7 +447,9 @@ a.active {
 }
 
 #works .work{
+    -ms-flex-preferred-size: 99%;
     flex-basis: 99%;
+    -ms-flex-preferred-size: calc(100% - 10px);
     flex-basis: calc(100% - 10px);
     margin: 5px;
     min-width: 215px;
@@ -448,19 +458,25 @@ a.active {
 }
 @media (min-width: 490px) {
     #works .work{
+        -ms-flex-preferred-size: 47%;
         flex-basis: 47%;
+        -ms-flex-preferred-size: calc(50% - 10px);
         flex-basis: calc(50% - 10px);
     }
 }
 @media (min-width: 715px) {
     #works .work{
+        -ms-flex-preferred-size: 31%;
         flex-basis: 31%;
+        -ms-flex-preferred-size: calc(33.3333% - 10px);
         flex-basis: calc(33.3333% - 10px);
     }
 }
 @media (min-width: 940px) {
     #works .work{
+        -ms-flex-preferred-size: 23%;
         flex-basis: 23%;
+        -ms-flex-preferred-size: calc(25% - 10px);
         flex-basis: calc(25% - 10px);
         max-width: 300px;
     }
@@ -480,6 +496,8 @@ a.active {
     left: 0;
     color: #ebebeb;
     opacity: 0;
+    -webkit-transition: opacity 0.5s ease-in-out;
+    -o-transition: opacity 0.5s ease-in-out;
     transition: opacity 0.5s ease-in-out;
 }
 #works .item:hover{
@@ -505,12 +523,13 @@ a.active {
     position: absolute;
     top: 50%;
     left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     font-size: 24px;
 }
 
 #works .modal-work {
-    /*display: block;*/
     position: fixed;
     z-index: 1;
     left: 0;
@@ -525,12 +544,19 @@ a.active {
     position: absolute;
     top: 50%;
     left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     width: 90%;
     max-width: 500px;
     background: #ebebeb;
     color: #3b3b3b;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
 }
 #works .modal-work .content-work img{
@@ -539,7 +565,6 @@ a.active {
 }
 #works .modal-work .info {
     padding: 10px 20px;
-    /*font-family: 'Lobster', cursive;*/
 }
 #works .modal-work .info h5{
     letter-spacing: 1px;
@@ -552,6 +577,8 @@ a.active {
 #works .modal-work .header {
     padding: 10px 20px;
     font-size: 24px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
 }
 #works .modal-work .header a{
