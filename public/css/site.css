@@ -71,6 +71,7 @@ header {
     right: 0px;
     top: 0px;
     border-radius: 50%;
+    z-index: 999998;
 }
 .icon-menu {
     width: 30px;
@@ -93,7 +94,7 @@ nav {
     padding: 5px;
     line-height: 2em;
     width: 200px;
-
+    z-index: 999998;
 }
 @media (min-width: 510px) {
     nav {
@@ -434,7 +435,7 @@ a.active {
     flex-flow: row wrap;
     -ms-flex-pack: distribute;
     justify-content: space-around;
-    /*padding: 5px;*/
+    background: lightgray;
 }
 #works h1{
     width: 100%;
@@ -539,6 +540,7 @@ a.active {
     overflow: auto;
     background-color: rgb(0,0,0);
     background-color: rgba(0,0,0,0.5);
+    z-index: 999999;
 }
 #works .modal-work .content-work{
     position: absolute;
@@ -587,4 +589,213 @@ a.active {
 }
 #works .modal-work .last-item{
     margin-left: auto;
+}
+
+/* ---------------------------------------------------------------------------
+                                CONTACT
+---------------------------------------------------------------------------*/
+#contact {
+    -webkit-box-ordinal-group: 6;
+    -ms-flex-order: 5;
+    order: 5;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    font-family: 'Roboto', sans-serif;
+}
+@media (min-width: 800px) {
+    #contact{
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+        flex-flow: row wrap;
+    }
+}
+#contact .header h5 {
+    margin: 10px 10px 0px 0;
+    padding: 0px;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    display: inline-block;
+    float: left;
+}
+.icon-email{
+    width: 50px;
+    height: 50px;
+    fill: #ebebeb;
+}
+#contact .header p {
+    letter-spacing: 1px;
+    font-weight: normal;
+    font-size: medium;
+}
+@media (min-width: 500px) {
+    #contact .header{
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+    }
+    #contact .header h5{
+        float: none;
+        -webkit-box-flex: 1;
+        -ms-flex: 1 1 25%;
+        flex: 1 1 25%;
+        text-align: center;
+    }
+    #contact .header p{
+        -webkit-box-flex: 1;
+        -ms-flex: 1 1 75%;
+        flex: 1 1 75%;
+    }
+}
+@media (min-width: 800px) {
+    #contact .header h5{
+        float: none;
+        -webkit-box-flex: 1;
+        -ms-flex: 1 1 16%;
+        flex: 1 1 16%;
+        text-align: center;
+    }
+    #contact .header p{
+        -webkit-box-flex: 1;
+        -ms-flex: 1 1 84%;
+        flex: 1 1 84%;
+    }
+}
+
+#contact #contactForm {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+#contactForm label{
+    margin: 10px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+#contactForm label span{
+    color: #A86308;
+    padding-left: 3px;
+}
+#contactForm input[type=text],
+#contactForm input[type=email],
+textarea {
+    margin: 10px;
+    padding: 10px;
+    color: #3b3b3b;
+    background: #ebebeb;
+}
+#contactForm input[type=text]:focus,
+#contactForm input[type=email]:focus,
+textarea:focus {
+    border: 2px solid #A86308;
+    outline: none;
+}
+#contactForm input[type=submit]{
+    margin: 0px auto 10px 10px;
+    padding: 10px 20px;
+    background: #303030;
+    border: 2px solid black;
+    outline: none;
+    color: #ebebeb;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+#contactForm input[type=submit]:hover{
+    background: #ebebeb;
+    border: 2px solid #303030;
+    color: #3b3b3b;
+}
+
+@media (min-width: 500px) {
+    #contact #contactForm{
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+        flex-flow: row wrap;
+    }
+    #contactForm label{
+        -webkit-box-flex: 1;
+        -ms-flex: 1 1 25%;
+        flex: 1 1 25%;
+        margin: 15px 0 10px 0;
+    }
+    #contactForm input[type=text],
+    #contactForm input[type=email],
+    textarea{
+        margin: 10px 0 10px 0;
+        -webkit-box-flex: 1;
+        -ms-flex: 1 1 69%;
+        flex: 1 1 69%;
+        -ms-flex: 1 1 calc(75% - 24px);
+        flex: 1 1 calc(75% - 24px);
+    }
+    #contactForm .submit{
+        -webkit-box-flex: 1;
+        -ms-flex: 1 1 75%;
+        flex: 1 1 75%;
+    }
+    #contactForm input[type=submit]{
+        margin: 10px 0 10px 0;
+    }
+}
+@media (min-width: 800px) {
+    #contact{
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+        flex-flow: row wrap;
+    }
+    #contact .header h5{
+        float: none;
+        -webkit-box-flex: 1;
+        -ms-flex: 1 1 16%;
+        flex: 1 1 16%;
+        text-align: center;
+    }
+    #contact .header p{
+        -webkit-box-flex: 1;
+        -ms-flex: 1 1 84%;
+        flex: 1 1 84%;
+    }
+    #contact #contactForm{
+        -webkit-box-flex: 1;
+        -ms-flex: 1 1 66.6667%;
+        flex: 1 1 66.6667%;
+    }
+}
+
+#contact .contact .info{
+    display: block;
+    padding: 20px 0 0 40px;
+    font-family: 'Alice', serif;
+    line-height: 1.5em;
+}
+@media (min-width: 800px){
+    #contact .contact {
+        -webkit-box-flex: 1;
+        -ms-flex: 1 1 33.3333%;
+        flex: 1 1 33.3333%;
+    }
+    #contact .contact .info{
+        padding: 0px 0 0 40px;
+    }
+}
+#contact .contact h5{
+    font-size: 18px;
+    padding: 0px;
+    margin: 10px 0;
+    letter-spacing: 2px;
+}
+#contact .contact p{
+    letter-spacing: 1px;
 }
