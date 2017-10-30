@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace Portfolio\Http\Controllers\Auth;
 
-use App\User;
-use App\Http\Controllers\Controller;
+use Portfolio\User;
+use Portfolio\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 
@@ -34,8 +34,7 @@ class RegisterController extends Controller
      *
      * @return void
      */
-    public function __construct()
-    {
+    public function __construct() {
         $this->middleware('guest');
     }
 
@@ -45,27 +44,39 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
-    protected function validator(array $data)
-    {
-        return Validator::make($data, [
-            'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string|min:6|confirmed',
-        ]);
+    protected function validator(array $data) {
+        $rules = User::$validates + [
+                'name'      => 'honeypot',
+                'time'      => 'required|honeytime:5',
+            ];
+        return Validator::make($data, $rules);
     }
 
     /**
      * Create a new user instance after a valid registration.
      *
      * @param  array  $data
-     * @return \App\User
+     * @return \Portfolio\User
      */
     protected function create(array $data)
     {
         return User::create([
-            'name' => $data['name'],
+            'first_name' => $data['first_name'],
+            'last_name' => $data['last_name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
+        ]);
+    }
+
+    /**
+     * Отображает форму регистрации нового пользователя.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function showRegistrationForm() {
+        $this->title = 'Регистрация';
+        return view('auth.register')->with([
+            'title' => 'Регистрация',
         ]);
     }
 }
