@@ -5,8 +5,13 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
+                @if(Session::has('success'))
+                    <div class="alert alert-success" role="alert">
+                        <strong>Браво!</strong>
+                        {!! Session::get('success') !!}
+                    </div>
+                @endif
                 <div class="panel-heading">Login</div>
-
                 <div class="panel-body">
                     <form class="form-horizontal" method="POST" action="{{ route('login') }}">
                         {{ csrf_field() }}

@@ -2,6 +2,12 @@
 
 namespace Portfolio\Http\Controllers\Auth;
 
+use Illuminate\Auth\Events\Registered;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Http\Request;
+use Portfolio\ConfirmEmail;
+use Portfolio\Mail\EmailVerification;
+use Portfolio\Mail\OrderShipped;
 use Portfolio\User;
 use Portfolio\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
@@ -80,5 +86,52 @@ class RegisterController extends Controller
         ]);
     }
 
+    /**
+     * Регистрирует нового пользователя.
+     *
+     * @param Request $request
+     * @return $this|\Illuminate\Http\RedirectResponse
+     */
+    public function register(Request $request){
+        $this->validator($request->all())->validate();
 
+        event(new Registered($user = $this->create($request->all())));
+
+        if($user){
+            $ce = ConfirmEmail::create([
+                'user_id'   => $user->id,
+                'token'     => str_random(32),
+            ]);
+            Mail::to($user)->queue(new EmailVerification($ce));
+
+            return redirect()->route('login')->withInput()
+                ->with('success', 'Для подтверждения email откройте '
+                    .'почтовый ящик и перейдите по указанной ссылке в '
+                    .'течении суток!');
+        }
+
+        return back()->withInput()->withErrors([
+            'email' => 'Что то пошло не так! Повторно пройдите регистрацию.'
+        ]);
+    }
+
+    /**
+     * Подтверждает email и активирует пользователя.
+     *
+     * @param $token
+     * @return \Illuminate\Http\Response
+     */
+    public function verify($token) {
+        $ce = ConfirmEmail::with('user')->where('token', $token)->first();
+        if(!$ce)
+            return redirect()->route('register')
+                ->withErrors(['email' => 'Запрос устарел. '
+                    .'Пройдите регистрацию заново!']);
+
+        $user = $ce->user;
+        $ce->delete();
+        $user->update(['status' => 1]);
+        return redirect()->route('login')
+            ->with('success', 'Регистрация прошла успешно');
+    }
 }

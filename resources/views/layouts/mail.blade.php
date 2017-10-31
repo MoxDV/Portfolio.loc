@@ -162,7 +162,7 @@
                     <td class="content footer" align="center">
                         <p>Отправлено от  <a href="{{ route('home') }}">
                                 {{ config('site.name') }}</a>,
-                            @foreach($data['address'] as $key => $address)
+                            {{--@foreach($data['address'] as $key => $address)
                                 @if($address)
                                     {{ $address }},
                                 @endif
@@ -170,7 +170,7 @@
                             @if(isset( $data['phone']))
                                 <br />
                                 телефон: {{ $data['phone'] }}
-                            @endif
+                            @endif--}}
                         </p>
                         <p>
                             <a href="mailto:">{{ env('EMAIL_MODER') }}</a>
