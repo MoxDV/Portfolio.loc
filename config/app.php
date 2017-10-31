@@ -177,6 +177,8 @@ return [
         Portfolio\Providers\EventServiceProvider::class,
         Portfolio\Providers\RouteServiceProvider::class,
 
+        Msurguy\Honeypot\HoneypotServiceProvider::class,
+
     ],
 
     /*
@@ -226,6 +228,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
 
+        'Honeypot' => Msurguy\Honeypot\HoneypotFacade::class,
     ],
 
 ];

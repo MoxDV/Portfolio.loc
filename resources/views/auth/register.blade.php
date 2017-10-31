@@ -10,6 +10,7 @@
                 <div class="panel-body">
                     <form class="form-horizontal" method="POST" action="{{ route('register') }}">
                         {{ csrf_field() }}
+                        {!! Honeypot::generate('name', 'time') !!}
 
                         <div class="form-group{{ $errors->has('first_name') ? ' has-error' : '' }}">
                             <label for="first_name" class="col-md-4 control-label">Имя</label>
