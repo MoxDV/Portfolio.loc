@@ -80,7 +80,6 @@ class RegisterController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function showRegistrationForm() {
-        $this->title = 'Регистрация';
         return view('auth.register')->with([
             'title' => 'Регистрация',
         ]);

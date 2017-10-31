@@ -4,6 +4,8 @@ namespace Portfolio;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Support\Facades\Mail;
+use Portfolio\Mail\ResetPasswordNotification;
 
 class User extends Authenticatable
 {
@@ -44,6 +46,6 @@ class User extends Authenticatable
      * @param string $token
      */
     public function sendPasswordResetNotification($token) {
-        Mail::to($this->email)->send(new ResetPasswordNotification($this, $token));
+        Mail::to($this->email)->queue(new ResetPasswordNotification($this, $token));
     }
 }

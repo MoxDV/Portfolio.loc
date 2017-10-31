@@ -21,16 +21,17 @@ Route::get('/verify-email/{token}', 'Auth\RegisterController@verify')
     ->name('verify_email');
 
 Route::get('/test', function (){
-    $link = route('home');
-    return view('layouts.mail')->with([
-        'name' => 'Митек',
-        'text_first' => view('mails.verify_email_first')->render(),
-        'link' => $link,
-        'text_button' => 'Активировать',
-        'text_last' => view('mails.verify_email_last')
-            ->with('link', $link)->render(),
-
-    ]);
+    $link = route('password.reset', ['token' => str_random(32)]);
+    $user = Portfolio\User::first();
+    return view('layouts.mail')
+        ->with([
+            'name' => $user->first_name,
+            'text_first' => view('mails.password_reset_first')->render(),
+            'link' => $link,
+            'text_button' => 'Сбросить',
+            'text_last' => view('mails.password_reset_last')
+                ->with('link', $link)->render(),
+        ]);
 });
 
 Route::get('/home', 'HomeController@index');

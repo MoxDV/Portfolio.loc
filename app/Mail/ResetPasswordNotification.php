@@ -6,6 +6,7 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
+use Portfolio\User;
 
 class ResetPasswordNotification extends Mailable
 {
@@ -40,7 +41,6 @@ class ResetPasswordNotification extends Mailable
                 'text_button' => 'Сбросить',
                 'text_last' => view('mails.password_reset_last')
                     ->with('link', $link)->render(),
-                'data' => SingleData::getData('address')
             ]);
     }
 }
