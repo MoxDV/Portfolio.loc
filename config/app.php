@@ -178,6 +178,7 @@ return [
         Portfolio\Providers\RouteServiceProvider::class,
 
         Msurguy\Honeypot\HoneypotServiceProvider::class,
+        Laravel\Dusk\DuskServiceProvider::class,
 
     ],
 
