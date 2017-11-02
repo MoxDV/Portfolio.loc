@@ -20,6 +20,8 @@ Auth::routes();
 Route::get('/verify-email/{token}', 'Auth\RegisterController@verify')
     ->name('verify_email');
 
+
+
 Route::get('/test', function (){
     $link = route('password.reset', ['token' => str_random(32)]);
     $user = Portfolio\User::first();
