@@ -14,7 +14,7 @@ use Portfolio\Http\Controllers\Controller;
  * @author Моксин Дмитрий Владимирович <moxdv777@mail.ru>
  * @version 1.0.0
  */
-class AdminController extends Controller {
+abstract class AdminController extends Controller {
     //------------------------------------------------------------------------
     //          Описание перемеменных
 
@@ -44,7 +44,7 @@ class AdminController extends Controller {
      *
      * @var string
      */
-    protected $keywords = 'shopin';
+    protected $keywords = 'Portfolio';
 
     /**
      * Основное содержимое страницы.
@@ -95,8 +95,8 @@ class AdminController extends Controller {
         $this->data = array_add($this->data, 'content', $this->content);
         $this->data = array_add($this->data, 'head', $this->head);
 
-        $navigation = view('admin.navigation')->render();
-        $this->data['navigation'] = $navigation;
+        //$navigation =
+        $this->data['navigation'] = view('admin.navigation')->render();
 
         return view($this->template)->with($this->data);
     }

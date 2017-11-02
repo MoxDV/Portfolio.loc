@@ -16,4 +16,9 @@ class HomeController extends Controller {
     {
         return view('home');
     }
+
+    public function logout(){
+        if(auth()->check()) auth()->logout();
+        return redirect()->route('home');
+    }
 }

@@ -48,4 +48,53 @@ class User extends Authenticatable
     public function sendPasswordResetNotification($token) {
         Mail::to($this->email)->queue(new ResetPasswordNotification($this, $token));
     }
+
+    /**
+     * Возвращает список ролей пользователя.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function roles(){
+        return $this->belongsToMany('Portfolio\Role', 'role_user')
+            ->withTimestamps();
+    }
+
+    /**
+     * Определяет доступ пользователя выбранным правам.
+     *
+     * @param $name Задает массив|строку с названием ролей.
+     * @param bool $require Задает признак: true - пользователь должен
+     * соответствовать каждой роли, false - хотя бы одной роли.
+     * @return bool Возвращает истину если пользователь имеет права доступа и
+     * ложь если не имеет прав доступа.
+     */
+    public function hasRole($name, $require = false){
+        if(is_array($name)){
+            foreach($name as $roleName){
+                $hasName = $this->hasRole($roleName);
+                if($hasName && !$require){
+                    return true;
+                } else if(!$hasName && $require){
+                    return false;
+                }
+            }
+            return $require;
+        } else {
+            foreach($this->roles as $role){
+                if($role->name == $name){
+                    return true;
+                }
+            }
+        }
+    }
+
+    /**
+     *  Возвращает путь к аватарке пользователя на сайте gravatar.
+     *
+     * @param $value
+     * @return string
+     */
+    public function getImageAttribute($value){
+        return 'https://gravatar.com/avatar/'.md5($this->email).'?d=mm&s=100';
+    }
 }

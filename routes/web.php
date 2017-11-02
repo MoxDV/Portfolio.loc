@@ -20,7 +20,21 @@ Auth::routes();
 Route::get('/verify-email/{token}', 'Auth\RegisterController@verify')
     ->name('verify_email');
 
+Route::group(['middleware' => 'auth'], function (){
+    Route::get('/logout', 'HomeController@logout')
+        ->name('logout');
+});
 
+// -----------   АДМИНИСТРАТИВНАЯ ЧАСТЬ САЙТА   ------------------------------
+Route::group([
+    'middleware'    => 'auth',
+    'prefix'        => 'admin',
+    'as'            => 'admin.',
+    'namespace'     => 'Admin',
+], function (){
+    // Отображает домашнюю страницу административного сайта
+    Route::get('/', 'IndexController@index')->name('index');
+});
 
 Route::get('/test', function (){
     $link = route('password.reset', ['token' => str_random(32)]);
@@ -36,4 +50,4 @@ Route::get('/test', function (){
         ]);
 });
 
-Route::get('/home', 'HomeController@index')->name('test');
+Route::get('/home', 'IndexController@index')->name('test');
