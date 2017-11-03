@@ -11,9 +11,9 @@
 |
 */
 
-Route::get('/', function () {
+Route::get('/', 'HomeController@index'/*function () {
     return view('site.site');
-})->name('home');
+}*/)->name('home');
 
 Auth::routes();
 // Подтверждение email пользователя
@@ -37,7 +37,7 @@ Route::group([
 });
 
 Route::get('/test', function (){
-    $link = route('password.reset', ['token' => str_random(32)]);
+    /*$link = route('password.reset', ['token' => str_random(32)]);
     $user = Portfolio\User::first();
     return view('layouts.mail')
         ->with([
@@ -47,7 +47,19 @@ Route::get('/test', function (){
             'text_button' => 'Сбросить',
             'text_last' => view('mails.password_reset_last')
                 ->with('link', $link)->render(),
-        ]);
+        ]);*/
+
+    \Portfolio\SingleData::setData('banner', [
+        'fullName' => "Имя Фамилия",
+        'bannerText' => 'I\'m a Manila based <span>graphic designer</span>, '
+            .'<span>illustrator</span> and <span>webdesigner</span> '
+            .'creating awesome and effective visual identities for '
+            .'companies of all sizes around the globe. Let\'s '
+            .'<a class="banner-link link" href="#about">start scrolling</a> '
+            .'and learn more <a class="banner-link link" href="#about">about '
+            .'me</a>.',
+    ]);
+    return \Portfolio\SingleData::getData('banner');
 });
 
 //Route::get('/home', 'IndexController@index')->name('test');

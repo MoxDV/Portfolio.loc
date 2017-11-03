@@ -14,13 +14,9 @@
 </nav>
 
 <div class="banner">
-    <div class="full-name">Дмитрий Моксин</div>
+    <div class="full-name">{{ $banner['fullName'] }}</div>
     <p class="banner-text">
-        I'm a Manila based <span>graphic designer</span>, <span>illustrator</span>
-        and <span>webdesigner</span> creating awesome and effective visual
-        identities for companies of all sizes around the globe. Let's
-        <a class="banner-link link" href="#about">start scrolling</a>
-        and learn more <a class="banner-link link" href="#about">about me</a>.
+        {!! $banner['bannerText'] !!}
     </p>
     <hr />
     <div class="social">
