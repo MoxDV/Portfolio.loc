@@ -50,4 +50,4 @@ Route::get('/test', function (){
         ]);
 });
 
-Route::get('/home', 'IndexController@index')->name('test');
+//Route::get('/home', 'IndexController@index')->name('test');
