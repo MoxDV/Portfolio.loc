@@ -1,8 +1,16 @@
 <?php
-
+use Carbon\Carbon;
 use Illuminate\Database\Seeder;
 use \Illuminate\Support\Facades\DB;
 
+/**
+ * Class UserTableSeeder
+ *
+ * Класс для занесения учетной записи в базу данных.
+ *
+ * @author Моксин Дмитрий Владимирович <moxdv777@mail.ru>
+ * @version 1.0.0
+ */
 class UserTableSeeder extends Seeder
 {
     /**
