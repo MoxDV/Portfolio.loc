@@ -38,6 +38,14 @@ Route::group([
     // Редактирование баннера
     Route::match(['get', 'post'], '/banner', 'BannerController@index')
         ->name('banner');
+
+    // Работа с соц.сетями
+    Route::get('/soc-networks/show/{method}', 'SocialNetController@show')
+        ->name('soc-networks.show');
+    Route::post('/soc-networks/restore/{id}', 'SocialNetController@restore')
+        ->name('soc-networks.restore');
+    Route::resource('soc-networks', 'SocialNetController', [
+        'except' => ['show', 'index']]);
 });
 
 Route::get('/test', function (){

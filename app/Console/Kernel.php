@@ -2,8 +2,10 @@
 
 namespace Portfolio\Console;
 
+use Carbon\Carbon;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
+use Portfolio\SocialNetwork;
 
 class Kernel extends ConsoleKernel
 {
@@ -22,10 +24,18 @@ class Kernel extends ConsoleKernel
      * @param  \Illuminate\Console\Scheduling\Schedule  $schedule
      * @return void
      */
-    protected function schedule(Schedule $schedule)
-    {
-        // $schedule->command('inspire')
-        //          ->hourly();
+    protected function schedule(Schedule $schedule) {
+        // Запускает функцию каждый день по МСК в 3:00
+        $schedule->call(function (){
+            $dt = Carbon::now()->addDay(-14);
+
+            // Удаляет из БД соц.сети
+            $socials = SocialNetwork::onlyTrashed()
+                ->where('deleted_at', '<', $dt)->get();
+            foreach ($socials as $social){
+                $social->forceDelete();
+            }
+        })->timezone('Europe/Moscow')->dailyAt('3:00');
     }
 
     /**

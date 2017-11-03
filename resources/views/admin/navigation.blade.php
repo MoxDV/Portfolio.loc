@@ -11,6 +11,41 @@
             </a></li>
     @endrole
 
+    {{-- Соц.сети --}}
+    @role('VIEW_SOCIAL')
+        <li>
+            <a href="#">
+                <i class="fa fa-users nav_icon" aria-hidden="true"></i>Соц.сети<span class="fa arrow"></span>
+            </a>
+            <ul class="nav nav-second-level">
+                {{-- Добавить --}}
+                @if(auth()->user()->hasRole('ADD_SOCIAL'))
+                    <li><a href="{{route('admin.soc-networks.create')}}">
+                            <i class="fa fa-plus nav_icon"></i>Добавить
+                        </a></li>
+                @endif
+                {{-- Редактировать --}}
+                @if(auth()->user()->hasRole('EDIT_SOCIAL'))
+                    <li><a href="{{route('admin.soc-networks.show', 'edit')}}">
+                            <i class="fa fa-pencil nav_icon"></i>Редактировать
+                        </a></li>
+                @endif
+                {{-- Удалить --}}
+                @if(auth()->user()->hasRole('DELETE_SOCIAL'))
+                    <li><a href="{{route('admin.soc-networks.show', 'delete')}}">
+                            <i class="fa fa-times nav_icon"></i>Удалить
+                        </a></li>
+                @endif
+                {{-- Восстановить --}}
+                @if(auth()->user()->hasRole('RESTORE_SOCIAL'))
+                    <li><a href="{{route('admin.soc-networks.show', 'restore')}}">
+                            <i class="fa fa-arrow-up nav_icon"></i>Восстановить
+                        </a></li>
+                @endif
+            </ul>
+        </li>
+    @endrole
+
     {{-- Выход --}}
     <li><a href="{{ route('logout') }}">
             <i class="fa fa-sign-out nav_icon"></i>Выход

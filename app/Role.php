@@ -21,6 +21,7 @@ class Role extends Model {
      * Определяет связь «многие ко многим» с пользователями.
      */
     public function users(){
-        return $this->belongsToMany('Portfolio\User', 'role_user')->withTimestamps();
+        return $this->belongsToMany('Portfolio\User', 'role_user')
+            ->withTimestamps();
     }
 }

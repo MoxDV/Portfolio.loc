@@ -24,6 +24,7 @@ class HomeController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function index() {
+        //dd(SingleData::getData('banner'));
         return view('site.site')->with([
             'banner' => $this->getBanner(),
             'socials' => $this->getSocials(),

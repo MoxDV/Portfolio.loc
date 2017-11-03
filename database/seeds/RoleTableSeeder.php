@@ -21,6 +21,26 @@ class RoleTableSeeder extends Seeder {
             'name' => 'EDIT_BANNER',
             'description' => 'Доступ к редактированию баннера',
         ],
+        [
+            'name' => 'VIEW_SOCIAL',
+            'description' => 'Доступ к администрированию социальных сетей',
+        ],
+        [
+            'name' => 'ADD_SOCIAL',
+            'description' => 'Доступ к добавлению соц.сети',
+        ],
+        [
+            'name' => 'EDIT_SOCIAL',
+            'description' => 'Доступ к редактированию соц.сети',
+        ],
+        [
+            'name' => 'DELETE_SOCIAL',
+            'description' => 'Доступ к удалению соц.сети',
+        ],
+        [
+            'name' => 'RESTORE_SOCIAL',
+            'description' => 'Доступ у восстановлению удаленных соц.сетей',
+        ],
     ];
 
     /**

@@ -21,6 +21,6 @@ class SocialNetwork extends Model {
     public static $validate = [
         'title' => 'required|max:191|min:2',
         'path'  => 'required|max:191|min:5',
-        'icon'=> 'required|max:191|min:5',
+        'icon' => 'required|max:191|min:5',
     ];
 }
