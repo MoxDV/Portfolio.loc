@@ -34,6 +34,10 @@ Route::group([
 ], function (){
     // Отображает домашнюю страницу административного сайта
     Route::get('/', 'IndexController@index')->name('index');
+
+    // Редактирование баннера
+    Route::match(['get', 'post'], '/banner', 'BannerController@index')
+        ->name('banner');
 });
 
 Route::get('/test', function (){

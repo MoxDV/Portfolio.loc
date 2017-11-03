@@ -16,7 +16,7 @@
 <div class="banner">
     <div class="full-name">{{ $banner['fullName'] }}</div>
     <p class="banner-text">
-        {!! $banner['bannerText'] !!}
+        {!! $banner['data'] !!}
     </p>
     <hr />
     <div class="social">

@@ -17,6 +17,10 @@ class RoleTableSeeder extends Seeder {
             'name' => 'VIEW_ADMIN',
             'description' => 'Доступ к административной части сайта',
         ],
+        [
+            'name' => 'EDIT_BANNER',
+            'description' => 'Доступ к редактированию баннера',
+        ],
     ];
 
     /**

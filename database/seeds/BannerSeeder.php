@@ -16,7 +16,7 @@ class BannerSeeder extends Seeder {
     public function run() {
         DB::table('single_datas')->insert([
             'identifier' => 'banner',
-            'data' => '{"fullName":"Имя Фалимия","bannerText":"I\'m a Manila'
+            'data' => '{"fullName":"Имя Фамилия","bannerText":"I\'m a Manila'
                 .'based <span>graphic designer<\/span>, <span>illustrator'
                 .'<\/span> and <span>webdesigner<\/span> creating awesome '
                 .'and effective visual identities for companies of all sizes '

@@ -180,6 +180,8 @@ return [
         Msurguy\Honeypot\HoneypotServiceProvider::class,
         Laravel\Dusk\DuskServiceProvider::class,
 
+        Collective\Html\HtmlServiceProvider::class,
+
     ],
 
     /*
@@ -230,6 +232,8 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
 
         'Honeypot' => Msurguy\Honeypot\HoneypotFacade::class,
+        'Form' => Collective\Html\FormFacade::class,
+        'Html' => Collective\Html\HtmlFacade::class,
     ],
 
 ];
