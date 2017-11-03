@@ -4,6 +4,7 @@ namespace Portfolio\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Portfolio\SingleData;
+use Portfolio\SocialNetwork;
 
 /**
  * Class HomeController
@@ -25,12 +26,19 @@ class HomeController extends Controller {
     public function index() {
         return view('site.site')->with([
             'banner' => $this->getBanner(),
+            'socials' => $this->getSocials(),
         ]);
     }
 
     protected function getBanner(){
         return cache()->remember('banner', 60, function (){
             return SingleData::getData('banner');
+        });
+    }
+
+    protected function getSocials(){
+        return cache()->remember('socials', 60, function (){
+            return SocialNetwork::get();
         });
     }
 

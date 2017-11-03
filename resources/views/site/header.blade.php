@@ -19,10 +19,13 @@
         {!! $banner['data'] !!}
     </p>
     <hr />
-    <div class="social">
-        <a href="#"><i class="fa fa-facebook"></i></a>
-        <a href="#"><i class="fa fa-vk"></i></a>
-        <a href="#"><i class="fa fa-odnoklassniki"></i></a>
-        <a href="#"><i class="fa fa-skype"></i></a>
-    </div>
+    @if($socials->count() > 0)
+        <div class="social">
+            @foreach($socials as $social)
+                <a href="{{ $social->path }}" title="{{ $social->title }}">
+                    <i class="fa {{ $social->icon }}"></i>
+                </a>
+            @endforeach
+        </div>
+    @endif
 </div>
