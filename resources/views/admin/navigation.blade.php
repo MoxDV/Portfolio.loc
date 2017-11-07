@@ -52,6 +52,12 @@
         </a></li>
     @endrole
 
+    @role('EDIT_CONTACTS')
+    <li><a href="{{ route('admin.contacts') }}">
+            <i class="fa fa-address-card nav_icon"></i>Контакты
+        </a></li>
+    @endrole
+
     {{-- Выход --}}
     <li><a href="{{ route('logout') }}">
             <i class="fa fa-sign-out nav_icon"></i>Выход

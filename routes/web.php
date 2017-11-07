@@ -47,9 +47,13 @@ Route::group([
     Route::resource('soc-networks', 'SocialNetController', [
         'except' => ['show', 'index']]);
 
-    // Редактирование данных обо мне
+    // Редактирование данных об авторе
     Route::match(['get', 'post'], '/about', 'AboutController@index')
         ->name('about');
+
+    // Редактирование контактов автора
+    Route::match(['get', 'post'], '/contacts', 'ContactController@index')
+        ->name('contacts');
 });
 
 Route::get('/test', function (){

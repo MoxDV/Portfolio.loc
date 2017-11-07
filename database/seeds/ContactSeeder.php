@@ -21,7 +21,7 @@ class ContactSeeder extends Seeder {
     public function run() {
         DB::table('single_datas')->insert([
             'identifier' => 'contacts',
-            'data' => '{"address": "Областная обл.<br>г.Город<br>'
+            'data' => '{"address": "Областная обл.<br />г. Город<br />'
                 .'+7(123) 456-89-01"}',
             'created_at'    => Carbon::now(),
             'updated_at'    => Carbon::now(),

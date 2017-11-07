@@ -45,6 +45,10 @@ class RoleTableSeeder extends Seeder {
             'name' => 'EDIT_ABOUT',
             'description' => 'Доступ к редактированию информации обо мне',
         ],
+        [
+            'name' => 'EDIT_CONTACTS',
+            'description' => 'Доступ к редактированию контактов автора',
+        ],
     ];
 
     /**
