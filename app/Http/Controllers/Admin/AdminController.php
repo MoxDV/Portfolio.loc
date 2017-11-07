@@ -3,6 +3,8 @@
 namespace Portfolio\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
+use Intervention\Image\Facades\Image;
 use Portfolio\Http\Controllers\Controller;
 
 /**

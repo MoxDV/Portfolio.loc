@@ -46,6 +46,12 @@
         </li>
     @endrole
 
+    @role('EDIT_ABOUT')
+    <li><a href="{{ route('admin.about') }}">
+            <i class="fa fa-user nav_icon"></i>Обо мне
+        </a></li>
+    @endrole
+
     {{-- Выход --}}
     <li><a href="{{ route('logout') }}">
             <i class="fa fa-sign-out nav_icon"></i>Выход

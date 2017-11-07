@@ -24,10 +24,11 @@ class HomeController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function index() {
-        //dd(SingleData::getData('banner'));
         return view('site.site')->with([
             'banner' => $this->getBanner(),
             'socials' => $this->getSocials(),
+            'about' => $this->getAbout(),
+            'contacts' => $this->getContact(),
         ]);
     }
 
@@ -40,6 +41,18 @@ class HomeController extends Controller {
     protected function getSocials(){
         return cache()->remember('socials', 60, function (){
             return SocialNetwork::get();
+        });
+    }
+
+    protected function getAbout(){
+        return cache()->remember('about', 60, function (){
+            return SingleData::getData('about');
+        });
+    }
+
+    protected function getContact(){
+        return cache()->remember('contacts', 60, function (){
+            return SingleData::getData('contacts')['address'];
         });
     }
 

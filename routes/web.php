@@ -46,6 +46,10 @@ Route::group([
         ->name('soc-networks.restore');
     Route::resource('soc-networks', 'SocialNetController', [
         'except' => ['show', 'index']]);
+
+    // Редактирование данных обо мне
+    Route::match(['get', 'post'], '/about', 'AboutController@index')
+        ->name('about');
 });
 
 Route::get('/test', function (){
@@ -60,18 +64,6 @@ Route::get('/test', function (){
             'text_last' => view('mails.password_reset_last')
                 ->with('link', $link)->render(),
         ]);*/
-
-    \Portfolio\SingleData::setData('banner', [
-        'fullName' => "Имя Фамилия",
-        'bannerText' => 'I\'m a Manila based <span>graphic designer</span>, '
-            .'<span>illustrator</span> and <span>webdesigner</span> '
-            .'creating awesome and effective visual identities for '
-            .'companies of all sizes around the globe. Let\'s '
-            .'<a class="banner-link link" href="#about">start scrolling</a> '
-            .'and learn more <a class="banner-link link" href="#about">about '
-            .'me</a>.',
-    ]);
-    return \Portfolio\SingleData::getData('banner');
 });
 
 //Route::get('/home', 'IndexController@index')->name('test');

@@ -181,6 +181,7 @@ return [
         Laravel\Dusk\DuskServiceProvider::class,
 
         Collective\Html\HtmlServiceProvider::class,
+        Intervention\Image\ImageServiceProvider::class
 
     ],
 
@@ -234,6 +235,7 @@ return [
         'Honeypot' => Msurguy\Honeypot\HoneypotFacade::class,
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
+        'Image' => Intervention\Image\Facades\Image::class
     ],
 
 ];

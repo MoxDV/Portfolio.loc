@@ -22,7 +22,9 @@ class BannerSeeder extends Seeder {
                 .'and effective visual identities for companies of all sizes '
                 .'around the globe. Let\'s <a class=\"banner-link link\" '
                 .'href=\"#about\">start scrolling<\/a> and learn more <a '
-                .'class=\"banner-link link\" href=\"#about\">about me<\/a>."}'
+                .'class=\"banner-link link\" href=\"#about\">about me<\/a>."}',
+            'created_at'    => Carbon::now(),
+            'updated_at'    => Carbon::now(),
         ]);
     }
 }

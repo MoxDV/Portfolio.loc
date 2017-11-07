@@ -41,6 +41,10 @@ class RoleTableSeeder extends Seeder {
             'name' => 'RESTORE_SOCIAL',
             'description' => 'Доступ у восстановлению удаленных соц.сетей',
         ],
+        [
+            'name' => 'EDIT_ABOUT',
+            'description' => 'Доступ к редактированию информации обо мне',
+        ],
     ];
 
     /**
